@@ -1,42 +1,35 @@
-function gradient(colors)
-    local direction = colors.direction or "horizontal"
-    if direction == "horizontal" then
-        direction = true
-    elseif direction == "vertical" then
-        direction = false
-    else
-        error("Invalid direction '" .. tostring(direction) "' for gradient.  Horizontal or vertical expected.")
-    end
-    local result = love.image.newImageData(1, #colors)
-    for i, color in ipairs(colors) do
-        local x, y
-        if direction then
-            x, y = 0, i - 1
-        else
-            x, y = i - 1, 0
-        end
-        result:setPixel(x, y, color[1], color[2], color[3], color[4] or 255)
-    end
-    result = love.graphics.newImage(result)
-    result:setFilter('linear', 'linear')
-    return result
+function love.load()
+    -- Something Something
 end
 
-local rainbow = gradient {
-    direction = 'horizontal';
-    {255, 0, 0};
-    {255, 255, 0};
-    {0, 255, 0};
-    {0, 255, 255};
-    {0, 0, 255};
-    {255, 0, 0};
-}
-
-function drawinrect(img, x, y, w, h, r, ox, oy, kx, ky)
-    return -- tail call for a little extra bit of efficiency
-    love.graphics.draw(img, x, y, r, w / img:getWidth(), h / img:getHeight(), ox, oy, kx, ky)
+function love.update(dt)
+    -- Something
 end
 
 function love.draw()
-    drawinrect(rainbow, love.graphics.getWidth() / 2 - 50, love.graphics.getHeight() / 2 - 50, 100, 100)
+    -- Something
+end
+
+function love.mousepressed(x, y, button)
+    -- Something
+end
+
+function love.mousereleased(x, y, button)
+    -- Something
+end
+
+function love.keypressed(key, unicode)
+    -- Something
+end
+
+function love.keyreleased(key, unicode)
+    -- Something
+end
+
+function love.focus(f)
+    -- Something
+end
+
+function love.quit()
+    -- Something
 end
