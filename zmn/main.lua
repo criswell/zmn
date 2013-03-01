@@ -4,9 +4,20 @@
     Stupid music playing app in Lua/Love2D
 ]]
 
+require("zmn")
+
 --[[ One-time management functions ]]
 function love.load()
-    -- Something Something
+    assets = {}
+    sound = {}
+    image = {
+        forward = love.graphics.newImage('asset/forward.png');
+        pause = love.graphics.newImage('asset/pause.png');
+        play = love.graphics.newImage('asset/play.png');
+        previous = love.graphics.newImage('asset/previous.png');
+    }
+
+
 end
 
 function love.quit()
